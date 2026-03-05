@@ -1,0 +1,27 @@
+# PyInstaller build output
+build/
+dist/
+*.spec.bak
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Workspace data (game files, user textures - never commit these)
+MW2_Project/
+
+# Backup files
+*.bak
+
+# Third-party tools (distribute separately - see README)
+iwi2dds.exe
+imgXiwi.exe
+
+# Personal workflow scripts (contain local paths)
+batch.ps1
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
