@@ -24,10 +24,10 @@ Download the latest release from the [Releases](https://github.com/CFOD/MW2-Text
 
 You also need these two external tools placed in the **same folder** as the EXE:
 
-| Tool | Purpose | Where to get it |
-|------|---------|-----------------|
-| `iwi2dds.exe` | Converts IWI → DDS | [Link your source here] |
-| `imgXiwi.exe` | Converts PNG → IWI | [Link your source here] |
+| Tool | Purpose |
+|------|---------|
+| `iwi2dds.exe` | Converts IWI → DDS |
+| `imgXiwi.exe` | Converts PNG → IWI |
 
 > `texconv.exe` and `libsquish.dll` are already bundled inside the EXE.
 
