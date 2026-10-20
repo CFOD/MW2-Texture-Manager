@@ -33,7 +33,7 @@ You also need these two external tools placed in the **same folder** as the EXE:
 
 ### Building from source
 ```
-pip install pillow pyinstaller
+pip install pillow pyinstaller customtkinter tkinterdnd2
 ```
 Place all four tool binaries (`iwi2dds.exe`, `imgXiwi.exe`, `texconv.exe`, `libsquish.dll`) in the project folder, then run:
 ```
@@ -96,3 +96,4 @@ Source code: [MIT](LICENSE)
 Bundled third-party binaries:
 - `texconv.exe` — [Microsoft DirectXTex](https://github.com/microsoft/DirectXTex) (MIT)
 - `libsquish.dll` — [libsquish](https://sourceforge.net/projects/libsquish/) (MIT)
+- `upscaler/realesrgan-ncnn-vulkan.exe` and bundled model weights — [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD 3-Clause)

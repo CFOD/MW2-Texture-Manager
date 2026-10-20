@@ -11,6 +11,9 @@ __pycache__/
 # Workspace data (game files, user textures - never commit these)
 MW2_Project/
 
+# Per-user local settings (last workspace path, window geometry)
+settings.json
+
 # Backup files
 *.bak
 
