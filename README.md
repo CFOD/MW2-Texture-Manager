@@ -22,24 +22,17 @@ Built with Python + CustomTkinter. Bundles into a single portable `.exe` via PyI
 ## Requirements
 
 ### Running the EXE
-Download the latest release from the [Releases](https://github.com/CFOD/MW2-Texture-Manager/releases) page.
+Download the latest release from the [Releases](https://github.com/CFOD/MW2-Texture-Manager/releases) page and run it — no Python and no other files needed.
 
-You also need these two external tools placed in the **same folder** as the EXE:
-
-| Tool | Purpose |
-|------|---------|
-| `iwi2dds.exe` | Converts IWI → DDS |
-| `imgXiwi.exe` | Converts PNG → IWI |
-
-> `texconv.exe`, `libsquish.dll` and the Real-ESRGAN upscaler (with its model) are already bundled inside the EXE.
+> Everything is bundled inside the EXE: `iwi2dds.exe`, `imgXiwi.exe`, `texconv.exe`, `libsquish.dll` and the Real-ESRGAN upscaler with its model.
 > The upscaler uses your GPU via Vulkan, so you need a Vulkan-capable graphics card and up-to-date drivers.
-> `iwi2dds.exe` and `imgXiwi.exe` are third-party tools that are not redistributed here — obtain them from the MW2 modding community and place them next to the EXE. The tool header shows OK/MISSING for each dependency.
+> If a tool is ever flagged MISSING in the status row, place it next to the EXE.
 
 ### Building from source
 ```
 pip install pillow pyinstaller customtkinter tkinterdnd2
 ```
-Requires Windows and Python 3.10+. The repo already contains `texconv.exe`, `libsquish.dll` and the `upscaler/` folder. Place `iwi2dds.exe` and `imgXiwi.exe` in the project folder to run from source (`python mw2_upscale_assistant.py`) or to build with them embedded, then run:
+Requires Windows and Python 3.10+. All tool binaries (`iwi2dds.exe`, `imgXiwi.exe`, `texconv.exe`, `libsquish.dll`, `upscaler/`) are included in the repo. To run from source: `python mw2_upscale_assistant.py`. To build the EXE:
 ```
 build_executable.bat
 ```
@@ -47,7 +40,6 @@ Or use the spec file directly:
 ```
 pyinstaller MW2_Tool.spec
 ```
-By default the EXE does **not** embed `iwi2dds.exe` / `imgXiwi.exe`. For a private all-in-one build, set `MW2_BUNDLE_EXTERNAL=1` before building.
 
 ---
 
@@ -106,6 +98,7 @@ Each folder holds one subfolder per project. The workspace location can be chang
 Source code: [MIT](LICENSE)
 
 Bundled third-party binaries:
+- `iwi2dds.exe`, `imgXiwi.exe` — third-party MW2 modding tools by their respective authors, included for convenience
 - `texconv.exe` — [Microsoft DirectXTex](https://github.com/microsoft/DirectXTex) (MIT)
 - `libsquish.dll` — [libsquish](https://sourceforge.net/projects/libsquish/) (MIT)
 - `upscaler/realesrgan-ncnn-vulkan.exe` and bundled model weights — [Real-ESRGAN](https://github.com/xinntao/Real-ESRGAN) (BSD 3-Clause)

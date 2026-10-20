@@ -17,10 +17,6 @@ settings.json
 # Backup files
 *.bak
 
-# Third-party tools (distribute separately - see README)
-iwi2dds.exe
-imgXiwi.exe
-
 # Personal workflow scripts (contain local paths)
 batch.ps1
 
