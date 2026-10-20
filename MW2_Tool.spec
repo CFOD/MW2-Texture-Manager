@@ -5,7 +5,15 @@ from PyInstaller.utils.hooks import collect_data_files
 # customtkinter ships its theme JSON files as package data; tkinterdnd2 ships
 # a native Tcl/tkdnd extension. Both need to be picked up explicitly since
 # PyInstaller's default analysis only follows Python imports.
-datas = [('iwi2dds.exe', '.'), ('texconv.exe', '.'), ('imgXiwi.exe', '.'), ('libsquish.dll', '.'), ('icon.ico', '.')]
+import os
+
+datas = [('texconv.exe', '.'), ('libsquish.dll', '.'), ('icon.ico', '.')]
+
+# iwi2dds.exe / imgXiwi.exe are third-party tools we don't redistribute, so
+# public builds leave them out and users place them beside the EXE. Set
+# MW2_BUNDLE_EXTERNAL=1 to embed them in a private, all-in-one build.
+if os.environ.get('MW2_BUNDLE_EXTERNAL') == '1':
+    datas += [('iwi2dds.exe', '.'), ('imgXiwi.exe', '.')]
 datas += collect_data_files('customtkinter')
 datas += collect_data_files('tkinterdnd2')
 

@@ -6,9 +6,9 @@ echo ========================================================
 echo.
 
 :: Check dependencies
-if not exist "iwi2dds.exe" echo [ERROR] iwi2dds.exe missing! & pause & exit /b
+if not exist "iwi2dds.exe" echo [NOTE] iwi2dds.exe not found - it will not be bundled; users must place it beside the EXE.
 if not exist "texconv.exe" echo [ERROR] texconv.exe missing! & pause & exit /b
-if not exist "imgXiwi.exe" echo [ERROR] imgXiwi.exe missing! & pause & exit /b
+if not exist "imgXiwi.exe" echo [NOTE] imgXiwi.exe not found - it will not be bundled; users must place it beside the EXE.
 if not exist "libsquish.dll" echo [ERROR] libsquish.dll missing! & pause & exit /b
 if not exist "upscaler\realesrgan-ncnn-vulkan.exe" echo [ERROR] upscaler\realesrgan-ncnn-vulkan.exe missing! & pause & exit /b
 if not exist "upscaler\models\realesrgan-x4plus.bin" echo [ERROR] upscaler\models\realesrgan-x4plus.bin missing! & pause & exit /b
@@ -42,7 +42,7 @@ set CMD=python -m PyInstaller --noconsole --onefile
 if exist "icon.ico" set CMD=%CMD% --icon "icon.ico"
 
 :: Add Data Dependencies
-set CMD=%CMD% --add-data "iwi2dds.exe;." --add-data "texconv.exe;." --add-data "imgXiwi.exe;." --add-data "libsquish.dll;." --add-data "icon.ico;."
+set CMD=%CMD% --add-data "texconv.exe;." --add-data "libsquish.dll;." --add-data "icon.ico;."
 set CMD=%CMD% --collect-data customtkinter --collect-data tkinterdnd2
 set CMD=%CMD% --add-data "upscaler\realesrgan-ncnn-vulkan.exe;upscaler" --add-data "upscaler\vcomp140.dll;upscaler"
 set CMD=%CMD% --add-data "upscaler\models\realesrgan-x4plus.bin;upscaler\models" --add-data "upscaler\models\realesrgan-x4plus.param;upscaler\models"
